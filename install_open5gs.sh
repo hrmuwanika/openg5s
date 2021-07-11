@@ -1,16 +1,16 @@
 #!/bin/bash
 
 ################################################################################
-# Script for installing Kamailio installation on Debian Buster
+# Script for installing Open5G on Ubuntu Focal (20.04)
 # Authors: Henry Robert Muwanika
 #
 #-------------------------------------------------------------------------------
 # Make a new file:
-# sudo nano install_kamailio.sh
+# sudo nano install_open5gs.sh
 # Place this content in it and then make the file executable:
-# sudo chmod +x install_kamailio.sh
-# Execute the script to install Kamailio:
-# ./install_kamailio.sh
+# sudo chmod +x install_open5gs.sh
+# Execute the script to install Open5Gs:
+# ./install_open5gs.sh
 ################################################################################
 ##
 
@@ -61,7 +61,6 @@ vim /etc/open5gs/sgwu.yaml
 vim /etc/open5gs/amf.yaml
 vim /etc/open5gs/upf.yaml
 
-
 sudo systemctl restart open5gs-mmed
 sudo systemctl restart open5gs-sgwcd
 sudo systemctl restart open5gs-smfd
@@ -93,6 +92,3 @@ make
 cd build
 ./nr-gnb -c ../config/open5gs-gnb.yaml
 ./nr-ue -c ../config/open5gs-ne.yaml
-
-
-
