@@ -25,8 +25,12 @@ make
 cd build
 ./nr-gnb -c ../config/open5gs-gnb.yaml
 
+# Inside here we’ll need to set the the parameters of our simulated gNodeB, for us this means (unless you’ve changed the PLMN etc) just changing
+# the Link IPs that the gNodeB binds to, and the IP of the AMFs 
+vim config/open5gs-gnb.yaml
+
 # in terminal 2
 cd build
 ./nr-ne -c ../config/open5gs-ne.yaml
 
-vim config/open5gs-ne.yaml
+# vim config/open5gs-ne.yaml
