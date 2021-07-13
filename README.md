@@ -1,4 +1,4 @@
-# VoLTE Setup with Kamailio IMS and Open5GS
-Inspired by https://open5gs.org/open5gs/docs/tutorial/02-VoLTE-setup/
+# My first 5G Core: Open5Gs and UERANSIM
+Inspired by https://nickvsnetworking.com/my-first-5g-core-open5gs-and-ueransim/
 
 still work in progress
