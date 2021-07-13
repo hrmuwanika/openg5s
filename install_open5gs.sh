@@ -45,11 +45,17 @@ curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
 curl -fsSL https://open5gs.org/open5gs/assets/webui/install | sudo -E bash -
 
-vim /etc/open5gs/mme.yaml 
-vim /etc/open5gs/sgwu.yaml 
+# 
+# vim /etc/open5gs/mme.yaml 
+# vim /etc/open5gs/sgwu.yaml 
 
+# By default the AMF binds to a loopback IP, which is fine if everything is running on the same box, but becomes an issue for real gNodeBs or 
+# if we’re running UERANSIM on a different machine. Change the ngap addr to bind the AMF to the machine’s IP
 vim /etc/open5gs/amf.yaml
-vim /etc/open5gs/upf.yaml
+# vim /etc/open5gs/upf.yaml
+
+sudo systemctl restart open5gs-amfd
+sudo systemctl restart open5gs-upfd
 
 #=======================================
 # Verify
@@ -71,3 +77,9 @@ sudo systemctl status open5gs-bsfd
 sudo systemctl status open5gs-udrd
 sudo systemctl status open5gs-webui
 
+echo "\n========================================================================="
+echo "Done! The Open5GS server is up and running."
+echo "Connect to http://localhost:3000 and login with admin account."
+echo "Username : admin"
+echo "Password : 1423"
+echo "Happy 5G testing!!!!!!!!"
