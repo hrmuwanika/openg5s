@@ -71,17 +71,3 @@ sudo systemctl status open5gs-bsfd
 sudo systemctl status open5gs-udrd
 sudo systemctl status open5gs-webui
 
-#=========================================
-# Install Ueransim dependencies
-#=========================================
-sudo apt install -y make gcc g++ libsctp-dev lksctp-tools iproute2 
-sudo snap install cmake --classic
-
-cd /usr/src
-git clone https://github.com/aligungr/UERANSIM
-cd UERANSIM
-make
-
-cd build
-./nr-gnb -c ../config/open5gs-gnb.yaml
-./nr-ue -c ../config/open5gs-ne.yaml
